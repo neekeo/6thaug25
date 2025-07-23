@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>⠀</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #040200;
+    }
+
+    /* Button on the left with spacing */
+    .button-wrapper {
+      padding: 20px;
+    }
+
+    #img-button {
+      width: 120px;
+      cursor: pointer;
+    }
+
+    /* Centered video */
+    .video-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 0px;
+    }
+
+    #video-container {
+      display: none;
+    }
+
+    video {
+      width: 800px;
+  height: 450px;
+    }
+  </style>
+</head>
+  <!-- favicon -->
+<link rel="icon" type="image/png" href="https://i.postimg.cc/pdSSCxzw/4.png">
+<body>
+
+  <!-- Left-side button -->
+  <div class="button-wrapper">
+    <img id="img-button" src="https://i.postimg.cc/FHt83Prp/lightswitch.png" alt="Click Me">
+  </div>
+
+<!-- Centered video -->
+<div class="video-wrapper">
+  <div id="video-container">
+    <iframe id="myVideo" width="800" height="450"
+      src="https://www.youtube.com/embed/3kBSXxMdOD4?autoplay=1&mute=1"
+      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+
+  <script>
+    const imageButton = document.getElementById("img-button");
+    const videoContainer = document.getElementById("video-container");
+    const video = document.getElementById("myVideo");
+
+    imageButton.addEventListener("click", function(event) {
+      if (event.button === 0) {
+        videoContainer.style.display = "block";
+      }
+    });
+  </script>
+
+</body>
+</html>
