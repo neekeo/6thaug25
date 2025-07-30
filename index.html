@@ -9,7 +9,6 @@
       background-color: #040200;
     }
 
-    /* Button on the left with spacing */
     .button-wrapper {
       padding: 20px;
     }
@@ -19,11 +18,9 @@
       cursor: pointer;
     }
 
-    /* Centered video */
     .video-wrapper {
       display: flex;
       justify-content: center;
-      margin-top: 0px;
     }
 
     #video-container {
@@ -32,29 +29,30 @@
 
     video {
       width: 800px;
-  height: 450px;
+      height: 450px;
     }
   </style>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
-  <!-- favicon -->
-<link rel="icon" type="image/png" href="https://i.postimg.cc/pdSSCxzw/4.png">
+
 <body>
 
-  <!-- Left-side button -->
+  <!-- Local GIF Button -->
   <div class="button-wrapper">
-    <img id="img-button" src="https://i.postimg.cc/FHt83Prp/lightswitch.png" alt="Click Me">
+    <img id="img-button" src="lightswitch.gif" alt="Click Me">
   </div>
 
-<!-- Centered video -->
-<div class="video-wrapper">
-  <div id="video-container">
-    <iframe id="myVideo" width="800" height="450"
-      src="https://www.youtube.com/embed/3kBSXxMdOD4?autoplay=1&mute=1"
-      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-    </iframe>
+  <!-- Local video player -->
+  <div class="video-wrapper">
+    <div id="video-container">
+      <video id="myVideo" autoplay muted controls>
+        <source src="yourvideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
   </div>
-</div>
-
 
   <script>
     const imageButton = document.getElementById("img-button");
@@ -64,6 +62,8 @@
     imageButton.addEventListener("click", function(event) {
       if (event.button === 0) {
         videoContainer.style.display = "block";
+        imageButton.src = "lightswitch_still.png"; // This is your static image file
+        video.play();
       }
     });
   </script>
