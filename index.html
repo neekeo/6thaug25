@@ -1,69 +1,73 @@
 <!DOCTYPE html>
+
 <html>
 <head>
-  <title>⠀</title>
+  <title>&#10240;</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background-color: #040200;
+      background-color: #e0d7ca;
+      transition: background-color 0.4s ease;
     }
 
-    .button-wrapper {
-      padding: 30px;
-    }
+```
+.button-wrapper {
+  padding: 40px;
+}
 
-    #img-button {
-      width: 150px;
-      cursor: pointer;
-    }
+#img-button {
+  width: 140px;
+  cursor: pointer;
+}
 
-    .video-wrapper {
-      display: flex;
-      justify-content: center;
-    }
+.gif-wrapper {
+  display: flex;
+  justify-content: center;
+}
 
-    #video-container {
-      display: none;
-    }
+#gif-container {
+  display: none;
+}
 
-    video {
-      width: 800px;
-      height: 450px;
-    }
+#myGif {
+  width: 800px;
+  height: auto;
+}
+```
+
   </style>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png">
+
+  <link rel="icon" type="image/png" href="favi.png">
 </head>
 
 <body>
 
   <!-- Local GIF Button -->
+
   <div class="button-wrapper">
     <img id="img-button" src="lightswitch.gif" alt="Click Me">
   </div>
 
-  <!-- Local video player -->
-  <div class="video-wrapper">
-    <div id="video-container">
-      <video id="myVideo" autoplay muted controls>
-        <source src="yourvideo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+  <!-- Local GIF display -->
+
+  <div class="gif-wrapper">
+    <div id="gif-container">
+      <img id="myGif" src="happybd.gif" alt="Animated GIF">
     </div>
   </div>
 
   <script>
     const imageButton = document.getElementById("img-button");
-    const videoContainer = document.getElementById("video-container");
-    const video = document.getElementById("myVideo");
+    const gifContainer = document.getElementById("gif-container");
 
     imageButton.addEventListener("click", function(event) {
       if (event.button === 0) {
-        videoContainer.style.display = "block";
-        imageButton.src = "lightswitch_still.png"; // This is your static image file
-        video.play();
+        gifContainer.style.display = "block";
+        imageButton.src = "lightswitch_still.png"; // Static image
+        document.body.style.backgroundColor = "#24232e"; // New background color
       }
     });
   </script>
